@@ -3,16 +3,21 @@ const gameState = {
     player1:['x'],
     player2:['o'],
     grid: [
-      [b1, b2, b3],
-      [b4, b5, b6],
-      [b7, b8, b9]
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
     ]
   }
-    function scoring(){
-        for(let i = 0; i < grid.length; i++){
-
-        }
+//   function for scoring for player 1
+    function scoringX(){
+    let player1 = 'x'
+        player1++
     }
+    function scoringO(){
+        let player2= 'o'
+        player2++
+    }
+
 //   function that gets player 1 winning 
   function winning(grid){
        let playerOne = 'Player 1 Won'
@@ -29,13 +34,17 @@ const gameState = {
     // gameScore function 
 
 //   make 
-    const board = document.querySelector('.board')
+    // const board = document.querySelector('.board')
 
+//    const button = document.createElement('button')
     
-//   add event listeners 
+    //board.appendChild(button) 
 
+//  add event listeners 
 
 // need to make game board set up for winners
 
 // need to set up the computer score up
+
+// need a reset button 
 
