@@ -1,21 +1,21 @@
 const gameState = {
     // players: ['x', 'o'],
-    player1:['x'],
-    player2:['o'],
+    player1:'x',
+    player2:'o',
     grid: [
       [null, null, null],
       [null, null, null],
       [null, null, null]
     ]
   }
-  console.log(gameState.grid)
+
 //   function for scoring for player 1
-    function scoringX(){
-    gameState.player1++
-    }
-    function scoringO(){
-        gameState.player2++
-    }
+    // function scoringX(){
+    // gameState.player1++
+    // }
+    // function scoringO(){
+    //     gameState.player2++
+    // }
     
     // winning combo
     const winningCombo = 
@@ -28,7 +28,7 @@ const gameState = {
         [2, 5, 8],
         [0, 4, 8],
         [2, 4, 6]]
-        // console.log(winningCombo)
+      
 // function for winning
 function playerOne(grid, winningCombo ){
     let playerX1 = 'player X won'
@@ -37,7 +37,6 @@ function playerOne(grid, winningCombo ){
         return playerX1
     }
 }
-console.log(playerOne)
 
 function playerTwo(grid, winningCombo){
     const playerO1 = 'Player O won'
@@ -46,7 +45,7 @@ for(let i = 0; i < gameState.grid.length; i++){
     return playerO1
 }
 }
-// function for draws\
+// function for draws
 function noOneWins(){
         let draw = 'Draw'
        for(let i = 0; i < gameState.grid.length; i++){
@@ -57,26 +56,26 @@ function noOneWins(){
 }
 //     // gameScore function 
     
-    const board = document.querySelector('.board')
 //    make a reference to board  
-
-   const button = document.createElement('button')
-    button.classList.add('X')
-    button.classList.add('O')
-    board.appendChild(button) 
+const board = document.querySelector('.board')
+// // created a button
+//    const button = document.createElement('button')
+//     button.classList.add('X')
+//     button.classList.add('O')
+//     board.appendChild(button) 
     
 
 //  add event listeners 
-gameState.addEventListener('click', function(evt){
+board.addEventListener('click', function(event){
+    console.log(event.target.id) // ---> will be a string representing the id of the element we click on
+    let row = event.target.id[0] // ---> pulling the first character of the string, and putting it in a variable
+    let col = event.target.id[2]
+    console.log({row, col})
+    gameState.grid[row][col] = 'x' 
+    console.log(gameState.grid)
 
-}
+})
 // Display who's turn it is
+const displayBox = document.createElement('div')
 
-// const displayBox = document.createElement('div')
-
-// board.appendChild(displayBox)
-
-// need to set up the computer score up
-
-
-// need a reset button 
+board.appendChild(displayBox)
