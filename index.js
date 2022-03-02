@@ -8,56 +8,68 @@ const gameState = {
       [null, null, null]
     ]
   }
+  console.log(gameState.grid)
 //   function for scoring for player 1
     function scoringX(){
-    let player1 = 'x'
-        player1++
+    gameState.player1++
     }
     function scoringO(){
         let player2= 'o'
         player2++
     }
     
-    const winningCombo = {
+    // winning combo
+    const winningCombo = 
         [
-        [w1, w2, w3],
-        [w4, w5, w6],
-        [w7, w8, w9],
-        [w1, w4, w7],
-        [w2, w5, w8],
-        [w3, w6, w9],
-        [w1, w5, w9],
-        [w3, w5, w7]]
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]]
+        // console.log(winningCombo)
+// function for winning
+function playerOne(grid, winningCombo ){
+    let playerX1 = 'player X won'
+    for(let i = 0; i < grid.length; i++ ){
+        if(scoringX = winningCombo)
+        return playerX1
     }
+}
+console.log(playerOne)
 
+function playerTwo(grid, winningCombo){
+    const playerO1 = 'Player O won'
+for(let i = 0; i < grid.length; i++){
+    if(scoringO = winningCombo)
+    return playerO1
+}
+}
+//     // gameScore function 
     
-//   function that gets player 1 winning
-//   function winning(grid){
-//        let playerOne = 'Player 1 Won'
-//     if((gameState.b1 = gameState.player1) && (gameState.b2 = gameState.player1) && (gameState.b3 = gameState.player1)) {
-//         return playerOne
-//     } 
-//     if((gameState.b1 = gameState.player1) && (gameState.b5 = gameState.player1) && (gameState.b9 = gameState.player1)){
-//         return playerOne
-//     }
-//     console.log(playerOne)
-//    }
-
-   
-    // gameScore function 
-
-//   make 
-    // const board = document.querySelector('.board')
+//     const board = document.querySelector('.board')
+//    make a reference to board  
 
 //    const button = document.createElement('button')
+//     button.classList.add('X')
+//     button.classList.add('O')
+//     board.appendChild(button) 
     
-    //board.appendChild(button) 
 
 //  add event listeners 
+// gameState.addEventListener('click', function(evt)){
 
-// need to make game board set up for winners
+// }
+// Display who's turn it is
+
+// const displayBox = document.createElement('div')
+
+// board.appendChild(displayBox)
 
 // need to set up the computer score up
+
 
 // need a reset button 
 
