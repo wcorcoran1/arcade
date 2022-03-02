@@ -14,8 +14,7 @@ const gameState = {
     gameState.player1++
     }
     function scoringO(){
-        let player2= 'o'
-        player2++
+        gameState.player2++
     }
     
     // winning combo
@@ -33,7 +32,7 @@ const gameState = {
 // function for winning
 function playerOne(grid, winningCombo ){
     let playerX1 = 'player X won'
-    for(let i = 0; i < grid.length; i++ ){
+    for(let i = 0; i < gameState.grid.length; i++ ){
         if(scoringX = winningCombo)
         return playerX1
     }
@@ -42,26 +41,35 @@ console.log(playerOne)
 
 function playerTwo(grid, winningCombo){
     const playerO1 = 'Player O won'
-for(let i = 0; i < grid.length; i++){
+for(let i = 0; i < gameState.grid.length; i++){
     if(scoringO = winningCombo)
     return playerO1
 }
 }
+// function for draws\
+function noOneWins(){
+        let draw = 'Draw'
+       for(let i = 0; i < gameState.grid.length; i++){
+        if(playerOne && playerTwo != winningCombo){
+            return draw
+        }
+    }
+}
 //     // gameScore function 
     
-//     const board = document.querySelector('.board')
+    const board = document.querySelector('.board')
 //    make a reference to board  
 
-//    const button = document.createElement('button')
-//     button.classList.add('X')
-//     button.classList.add('O')
-//     board.appendChild(button) 
+   const button = document.createElement('button')
+    button.classList.add('X')
+    button.classList.add('O')
+    board.appendChild(button) 
     
 
 //  add event listeners 
-// gameState.addEventListener('click', function(evt)){
+gameState.addEventListener('click', function(evt){
 
-// }
+}
 // Display who's turn it is
 
 // const displayBox = document.createElement('div')
@@ -72,4 +80,3 @@ for(let i = 0; i < grid.length; i++){
 
 
 // need a reset button 
-
