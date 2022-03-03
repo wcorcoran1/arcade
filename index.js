@@ -55,6 +55,9 @@ board.addEventListener('click', function(event){
     // che
     if (gameState.currentPlayer == 'x'){
         //html element update based on currentplayer
+        const currentPlayer =document.getElementsByClassName('.cell')
+        
+
         gameState.currentPlayer = 'o'
     }
     else { 
