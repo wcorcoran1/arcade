@@ -1,8 +1,13 @@
 body {
-    background-color: white;
+    background-color: black;
 }
+header {
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .board {
-    border:5px solid black;
+    border:5px solid red;
     height: 500px;
     width: 500px;
     display:grid;
@@ -11,7 +16,11 @@ body {
 }
 
 .cell {
-    border:2px solid black;
-    color:orange
+    border:2px solid blue;
+}
+
+# 0,0 {
+    color: green;
+    display:flex;
 }
 
