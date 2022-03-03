@@ -1,7 +1,7 @@
 const gameState = {
-    // players: ['x', 'o'],
-    player1:'x',
-    player2:'o',
+    playerX: 'x',
+    player2: 'o',
+    currentPlayer: 'x',
     grid: [
       [null, null, null],
       [null, null, null],
@@ -9,26 +9,6 @@ const gameState = {
     ]
   }
 
-//   function for scoring for player 1
-    // function scoringX(){
-    // gameState.player1++
-    // }
-    // function scoringO(){
-    //     gameState.player2++
-    // }
-    
-    // winning combo
-    const winningCombo = 
-        [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]]
-      
 // function for winning
 function playerOne(grid, winningCombo ){
     let playerX1 = 'player X won'
@@ -71,10 +51,22 @@ board.addEventListener('click', function(event){
     let row = event.target.id[0] // ---> pulling the first character of the string, and putting it in a variable
     let col = event.target.id[2]
     console.log({row, col})
-    gameState.grid[row][col] = 'x' 
-    console.log(gameState.grid)
+    gameState.grid[row][col] = gameState.currentPlayer
+    // che
+    if (gameState.currentPlayer == 'x'){
+        //html element update based on currentplayer
+        gameState.currentPlayer = 'o'
+    }
+    else { 
+        //html element update based on currentplayer
+        gameState.currentPlayer = 'x'
+    }
+    console.log(gameState)
 
 })
+function updatePlayed() {
+    //do some html-y-like stuff to new cell played
+}
 // Display who's turn it is
 const displayBox = document.createElement('div')
 

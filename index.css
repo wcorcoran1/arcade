@@ -1,5 +1,5 @@
 body {
-    background-color: darkgray;
+    background-color: white;
 }
 .board {
     border:5px solid black;
@@ -8,5 +8,10 @@ body {
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
+}
+
+.cell {
+    border:2px solid black;
+    color:orange
 }
 
