@@ -2,8 +2,11 @@ body {
     background-color: white;
 }
 header {
+    display:flex;   
+    justify-content: center;
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18pt;
 }
 
 .board {
@@ -16,11 +19,11 @@ header {
 }
 
 .cell {
+    display: flex;
     border:2px solid blue;
-}
-
-# 0,0 {
-    color: green;
-    display:flex;
+    font-size: 80pt;
+    justify-content: center;
+    align-items: center;
+    color:purple
 }
 
