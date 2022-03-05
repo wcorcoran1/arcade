@@ -12,7 +12,7 @@ const gameState = {
     
 //    make a reference to board  
 const board = document.querySelector('.board')
-const cell = document.querySelector('.cell')
+
 // board has an event listener click.
 board.addEventListener('click', function(event){
     console.log(event.target.id) // ---> will be a string representing the id of the element we click on
@@ -44,13 +44,18 @@ function renderBoard(){
             currentCell.innerText = value
         }
     }
-    
 }
+// function to check board for winner
+    function checkBoard(){
+
+    }
+
 function updatePlayed() {
     //do some html-y-like stuff to new cell played
     
 }
-// Display who's turn it is
-const displayBox = document.createElement('div')
-
-board.appendChild(displayBox)
+//  function for a restart button
+const restartGame = 'Restart Game'
+const restart = document.querySelector('.restart')
+restart.addEventListener('click', handleRestart)
+restart.innerText = restartGame

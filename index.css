@@ -4,7 +4,7 @@ body {
 header {
     display:flex;   
     justify-content: center;
-    color: black;
+    color: fuchsia;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18pt;
 }
@@ -24,6 +24,6 @@ header {
     font-size: 80pt;
     justify-content: center;
     align-items: center;
-    color:purple
+    color:lime;
 }
 
