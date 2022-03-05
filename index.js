@@ -1,3 +1,4 @@
+// GameState is an object that contains our game grid and player values
 const gameState = {
     playerX: 'x',
     player2: 'o',
@@ -21,6 +22,7 @@ board.addEventListener('click', function(event){
     console.log({row, col})
     // 
     gameState.grid[row][col] = gameState.currentPlayer
+    // calling renderBoard function this allows us to loop through the board.
      renderBoard()
     if (gameState.currentPlayer === 'x'){
         //html element update based on currentplayer
@@ -45,17 +47,16 @@ function renderBoard(){
         }
     }
 }
-// function to check board for winner
+
+// function to check board to make it valid
     function checkBoard(){
-
+    
     }
-
 function updatePlayed() {
     //do some html-y-like stuff to new cell played
     
 }
-//  function for a restart button
+//  restart button connected to the button in the HTML
 const restartGame = 'Restart Game'
 const restart = document.querySelector('.restart')
-restart.addEventListener('click', handleRestart)
-restart.innerText = restartGame
+// restart button with the event listener on the DOM
