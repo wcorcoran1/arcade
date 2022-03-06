@@ -1,18 +1,24 @@
+/* Webpage body styling */
 body {
     display: flex;
     flex-direction: column;
     background-color: black;
+    /* Moving all the content to the middle of the webpage by using justify-content
+    and  align items to the center. */
     justify-content: center;
     align-items: center;
 }
+/* styling the header that has our title Tic Tac Toe */
 header {
-    display:flex;   
-    justify-content: center;
     color: fuchsia;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18pt;
 }
 
+.playerTurn {
+    color:limegreen;
+}
+/* styling the game board */
 .board {
     border:5px solid red;
     height: 500px;
@@ -21,15 +27,20 @@ header {
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
 }
-
+/* styling the in the class called cell giving them that grid look by coloring their borders. */
 .cell {
     display: flex;
-    border:2px solid blue;
+    border-right:2px solid blue;
+    border-top: 2px solid yellow;
+    border-left:2px solid purple;
+    border-bottom: darkturquoise;
     font-size: 80pt;
     justify-content: center;
     align-items: center;
     color:lime;
+    background-color: ;
 }
+/* styling for the class restart in our button tag.*/
 .restart {
     display:flex;
     justify-self: center;
