@@ -44,6 +44,17 @@ header {
 .restart {
     display:flex;
     justify-self: center;
-    width:60px;
+    font-size: 20pt;
+    width:100px;
+    height: 35px;
     background-color: aqua;
+}
+
+.names {
+    display:flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    background-color: lightgrey;
+    height:30px;
+    width: 200px;
 }
