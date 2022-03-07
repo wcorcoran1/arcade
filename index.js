@@ -57,6 +57,11 @@ function renderBoard(){
         }
     }
 }
+function moveCount (){
+    for(let i = 0; i < 5; i++){
+
+    }
+}
 // checkBoard for a winner function
 function checkBoard(x = gameState.grid){
     for(let i = 0; i < gameState.grid.length; i++){
