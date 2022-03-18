@@ -1,6 +1,6 @@
+// gameState objects
 const gameState = {
   currentPlayer: "x",
-  winner: null,
   // grid is a nested array
   grid: [
     [null, null, null],
@@ -8,16 +8,23 @@ const gameState = {
     [null, null, null],
   ],
 };
+// Connecting to our HTML Elements
+const playerNames = document.getElementsByClassName(".names");
+const board = document.querySelector(".board");
+const restartGame = document.querySelector(".restart");
+const winningBoard = document.querySelector(".winner");
+let playerStatus = document.querySelector(".playerTurn");
 
+// function that allows us to switch players
 function switchPlayer() {
   if (gameState.currentPlayer === "x") {
-    //html element update based on currentplayer
     gameState.currentPlayer = "o";
   } else {
-    //html element update based on currentplayer
     gameState.currentPlayer = "x";
   }
 }
+
+// function that allows us to check our rows on the board
 function checkRows() {
   for (let i = 0; i < gameState.grid.length; i++) {
     let currentRow = gameState.grid[i];
@@ -27,10 +34,13 @@ function checkRows() {
   }
   return false;
 }
+
+// function that checks our columns on the board
 const checkColumns = () => {
-  // for loop that loops through the game board.
+  // two for loops that loop through the game board.
   for (let i = 0; i < gameState.grid.length; i++) {
     for (let k = 0; k < gameState.grid.length; k++) {
+      // if statement stating that if column 0 equals column1 and column1 equals column 2
       if (
         gameState.grid[0][k] === gameState.grid[1][k] &&
         gameState.grid[1][k] === gameState.grid[2][k]
@@ -42,6 +52,7 @@ const checkColumns = () => {
   return false;
 };
 
+// function that checks our diagonal spaces on the game board
 const checkDiagonal = () => {
   if (
     gameState.grid[0][0] === gameState.grid[1][1] &&
@@ -56,7 +67,8 @@ const checkDiagonal = () => {
   }
   return false;
 };
-const winningBoard = document.querySelector(".winner");
+
+// function to check if we have a winner
 function checkWinner() {
   let toeWinner = `${gameState.currentPlayer} is the winner`;
   let draw = "draw";
@@ -69,6 +81,8 @@ function checkWinner() {
   }
   return draw;
 }
+
+// function that
 function renderBoard() {
   for (let i = 0; i < gameState.grid.length; i++) {
     // for loop k is a nested loop in loop i.
@@ -81,25 +95,18 @@ function renderBoard() {
   }
 }
 
-const playerNames = document.getElementsByClassName(".names");
-const board = document.querySelector(".board");
-
-const restartGame = document.querySelector(".restart");
+// putting it all together in an event listener
 board.addEventListener("click", function (event) {
-  //   console.log(event.target.id); // ---> will be a string representing the id of the element we click on
   let row = event.target.id[0]; // ---> pulling the first character of the string, and putting it in a variable
   let col = event.target.id[2];
-  console.log({ row, col });
   gameState.grid[row][col] = gameState.currentPlayer;
-
-  // calling renderBoard function this allows us to loop through the board.
+  /* GameState status that tells who is the winner and 
+  has to place before checkWinner call in order to work*/
   winningBoard.innerText = checkWinner();
+  // calling our functions
+  switchPlayer();
   checkWinner();
   renderBoard();
-  switchPlayer();
-  // if statement that allows us to change current players
-  // made a variable that connects to the playerTurn class in HTML
-  let playerStatus = document.querySelector(".playerTurn");
   // PlayerStatus variable we created above to display who's turn it is based on gameState Current player.
   playerStatus.innerText = gameState.currentPlayer + "'s " + " Turn";
 });
