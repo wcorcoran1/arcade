@@ -11,7 +11,7 @@ const gameState = {
 // Connecting to our HTML Elements
 const playerNames = document.getElementsByClassName(".names");
 const board = document.querySelector(".board");
-const restartGame = document.querySelector(".restart");
+const restartGameButton = document.querySelector(".restart");
 const winningBoard = document.querySelector(".winner");
 let playerStatus = document.querySelector(".playerTurn");
 
@@ -82,7 +82,8 @@ function checkWinner() {
   return draw;
 }
 
-// function that
+// function that 
+
 function renderBoard() {
   for (let i = 0; i < gameState.grid.length; i++) {
     // for loop k is a nested loop in loop i.
@@ -91,6 +92,7 @@ function renderBoard() {
       let currentCell = document.getElementById(`${i},${k}`);
       //    currentCell using the innerText element to put our values on the board.
       currentCell.innerText = value;
+     
     }
   }
 }
@@ -100,6 +102,7 @@ board.addEventListener("click", function (event) {
   let row = event.target.id[0]; // ---> pulling the first character of the string, and putting it in a variable
   let col = event.target.id[2];
   gameState.grid[row][col] = gameState.currentPlayer;
+  
   /* GameState status that tells who is the winner and 
   has to place before checkWinner call in order to work*/
   winningBoard.innerText = checkWinner();
@@ -109,4 +112,10 @@ board.addEventListener("click", function (event) {
   renderBoard();
   // PlayerStatus variable we created above to display who's turn it is based on gameState Current player.
   playerStatus.innerText = gameState.currentPlayer + "'s " + " Turn";
+})
+
+const cells = document.querySelector('.cell')
+restartGameButton.addEventListener("click",function (event){
+    cells.remove(gameState.currentPlayer) 
+  console.log("click")
 });
