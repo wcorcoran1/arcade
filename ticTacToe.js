@@ -59,7 +59,7 @@ const checkDiagonal = () => {
     gameState.grid[1][1] === gameState.grid[2][2]
   ) {
     return gameState.grid[0][0];
-  } else if (
+  } if (
     gameState.grid[0][2] === gameState.grid[1][1] &&
     gameState.grid[1][1] === gameState.grid[2][0]
   ) {
