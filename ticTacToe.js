@@ -114,11 +114,8 @@ board.addEventListener("click", function (event) {
   gameState.grid[row][col] = gameState.currentPlayer
   switchPlayer();
   }
-  /* GameState status that tells who is the winner and 
-  has to place before checkWinner call in order to work*/
-  winningBoard.innerText = checkWinner();
-  // calling our functions
-  checkWinner();
+  winningBoard.innerText = checkWinner()
+  // calling our renderBoard function
   renderBoard();
   // PlayerStatus variable we created above to display who's turn it is based on gameState Current player.
   playerStatus.innerText = gameState.currentPlayer + "'s " + " Turn";
