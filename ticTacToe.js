@@ -110,13 +110,14 @@ function renderBoard() {
 board.addEventListener("click", function (event) {
   let row = event.target.id[0]; // ---> pulling the first character of the string, and putting it in a variable
   let col = event.target.id[2];
-  gameState.grid[row][col] = gameState.currentPlayer;
-  
+  if(!gameState.grid[row][col]){
+  gameState.grid[row][col] = gameState.currentPlayer
+  switchPlayer();
+  }
   /* GameState status that tells who is the winner and 
   has to place before checkWinner call in order to work*/
   winningBoard.innerText = checkWinner();
   // calling our functions
-  switchPlayer();
   checkWinner();
   renderBoard();
   // PlayerStatus variable we created above to display who's turn it is based on gameState Current player.
@@ -134,9 +135,24 @@ restartButton.addEventListener("click",function (event){
     renderBoard();
   console.log("click")
 });
+// if statement player1
+const name1 = document.getElementById('name1')
+name1.addEventListener("input",function (event){
+  let label1 = document.querySelector('label[for = "name1"]')
+  if(event.target.value){
+    label1.innerHTML = event.target.value
+  } else {
+    label1.innerHTML = 'Player1'
+  }
 
-const name1 = document.getElementById('nameForm')
-name1.addEventListener("submit",function (event){
-  console.log("hi wesley")
-
+} )
+// if statement computer
+const name2 = document.getElementById('name2')
+name2.addEventListener("input",function (event){
+  let label2 = document.querySelector('label[for = "name2"]')
+  if(event.target.value){
+    label2.innerHTML = event.target.value
+  } else {
+    label2.innerHTML = 'Computer'
+  }
 } )
