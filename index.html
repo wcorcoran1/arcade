@@ -11,8 +11,10 @@
 <body>
     <header>
         <h1>Tic Tac Toe</h1>
-        <input placeholder="Player x" type="text" class="names">
-        <input placeholder="Player o"type="text" class="names">
+        <form id="nameForm">
+        <input placeholder="Player x" type="text" id="name1">
+        <input placeholder="Player o"type="text" id="name2">
+        </form>
         <h2 class="playerTurn">Player x moves first</h2>
         <h2 class="winner"></h2>
     </header>
@@ -27,6 +29,6 @@
         <div class="cell" id="2,0"></div>
         <div class="cell" id="2,2"></div>
     </div>
-    <button class="restart">Reset</button>
+    <button id="restartButton">Reset</button>
 </body>
 </html>

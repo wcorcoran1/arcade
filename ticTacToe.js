@@ -78,8 +78,17 @@ function checkWinner() {
     return toeWinner;
   } else if (checkDiagonal() === gameState.currentPlayer) {
     return toeWinner;
+  } else {
+    for (let i = 0; i < gameState.grid.length; i++) {
+      for (let k = 0; k < gameState.grid.length; k++) {
+        if(gameState.grid[i][k] === null){
+          draw = ' '
+        }
+      
+      }
+    }
   }
-  return draw;
+  return draw
 }
 
 // function that 
@@ -114,8 +123,20 @@ board.addEventListener("click", function (event) {
   playerStatus.innerText = gameState.currentPlayer + "'s " + " Turn";
 })
 
-const cells = document.querySelector('.cell')
-restartGameButton.addEventListener("click",function (event){
-    cells.remove(gameState.currentPlayer) 
+const restartButton = document.getElementById('restartButton')
+restartButton.addEventListener("click",function (event){
+    gameState.currentPlayer = 'x' ;
+    gameState.grid = [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ]
+    renderBoard();
   console.log("click")
 });
+
+const name1 = document.getElementById('nameForm')
+name1.addEventListener("submit",function (event){
+  console.log("hi wesley")
+
+} )
