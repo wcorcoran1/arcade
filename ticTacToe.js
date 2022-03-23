@@ -9,9 +9,7 @@ const gameState = {
   ],
 };
 // Connecting to our HTML Elements
-const playerNames = document.getElementsByClassName(".names");
 const board = document.querySelector(".board");
-const restartGameButton = document.querySelector(".restart");
 const winningBoard = document.querySelector(".winner");
 let playerStatus = document.querySelector(".playerTurn");
 
@@ -130,7 +128,6 @@ restartButton.addEventListener("click",function (event){
       [null, null, null],
     ]
     renderBoard();
-  console.log("click")
 });
 // if statement player1
 const name1 = document.getElementById('name1')
